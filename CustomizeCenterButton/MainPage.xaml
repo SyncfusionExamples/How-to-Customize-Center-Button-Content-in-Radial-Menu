@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomizeCenterButton.MainPage"
+             xmlns:radialMenu="clr-namespace:Syncfusion.Maui.RadialMenu;assembly=Syncfusion.Maui.RadialMenu">
+
+    <Grid Padding="24">
+        <radialMenu:SfRadialMenu x:Name="EditorRadialMenu"
+                                 WidthRequest="330"
+                                 HeightRequest="330"
+                                 CenterButtonSize="72"
+                                 CenterButtonBackgroundColor="White"
+                                 CenterButtonStroke="#6750A4"
+                                 CenterButtonStrokeThickness="2"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center">
+
+            <!-- Custom center button content -->
+            <radialMenu:SfRadialMenu.CenterButtonView>
+                <VerticalStackLayout Spacing="0"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center">
+                    <Label Text="☰"
+                           TextColor="#6750A4"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center" />
+                    <Label Text="Menu"
+                           TextColor="Black"
+                           FontSize="10"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </radialMenu:SfRadialMenu.CenterButtonView>
+
+            <!-- Custom back button for nested items -->
+            <radialMenu:SfRadialMenu.CenterButtonBackView>
+                <VerticalStackLayout Spacing="0"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center">
+                    <Label Text="←"
+                           TextColor="#6750A4"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center" />
+
+                    <Label Text="Back"
+                           TextColor="Black"
+                           FontSize="10"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </radialMenu:SfRadialMenu.CenterButtonBackView>
+            <radialMenu:SfRadialMenu.Items>
+                <radialMenu:SfRadialMenuItem Text="Cut"
+                                             TextColor="Black"
+                                             FontSize="12" />
+                <radialMenu:SfRadialMenuItem Text="Copy"
+                                             TextColor="Black"
+                                             FontSize="12" />
+                <radialMenu:SfRadialMenuItem Text="Paste"
+                                             TextColor="Black"
+                                             FontSize="12" />
+                <radialMenu:SfRadialMenuItem Text="Delete"
+                                             TextColor="Black"
+                                             FontSize="12" />
+
+                <!-- Nested radial menu item -->
+                <radialMenu:SfRadialMenuItem Text="Format"
+                                             TextColor="Black"
+                                             FontSize="12">
+                    <radialMenu:SfRadialMenuItem.Items>
+                        <radialMenu:SfRadialMenuItem Text="Bold"
+                                                     TextColor="Black"
+                                                     FontSize="12"
+                                                     ItemWidth="50" />
+                        <radialMenu:SfRadialMenuItem Text="Italic"
+                                                     TextColor="Black"
+                                                     FontSize="12"
+                                                     ItemWidth="50" />
+                        <radialMenu:SfRadialMenuItem Text="Underline"
+                                                     TextColor="Black"
+                                                     FontSize="12"
+                                                     ItemWidth="50" />
+                    </radialMenu:SfRadialMenuItem.Items>
+                </radialMenu:SfRadialMenuItem>
+            </radialMenu:SfRadialMenu.Items>
+        </radialMenu:SfRadialMenu>
+    </Grid>
+
+</ContentPage>
